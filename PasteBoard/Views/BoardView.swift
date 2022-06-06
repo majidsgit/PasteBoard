@@ -9,9 +9,17 @@ import SwiftUI
 
 struct BoardView: View {
     var body: some View {
-        ZStack {
+        ZStack(alignment: .trailing) {
             RoundedRectangle(cornerRadius: 60)
                 .foregroundColor(.contentBG)
+            
+            Rectangle()
+                .frame(width: 120)
+                .foregroundColor(.contentBG)
         }
+        .background(
+            Color.background
+                .ignoresSafeArea()
+        )
     }
 }

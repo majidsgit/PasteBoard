@@ -25,6 +25,10 @@ struct SidebarView: View {
             Spacer()
         }
         .frame(width: 218)
+        .background(
+            Color.background
+                .ignoresSafeArea()
+        )
     }
     
     
@@ -50,12 +54,12 @@ struct SidebarView: View {
             
             Spacer()
         }
+        .padding(.all, 16)
         .onHover { isHovered in
             withAnimation(.easeInOut(duration: 0.1)) {
                 showCloseTitle.toggle()
             }
         }
-        .padding(.all, 16)
     }
     
     

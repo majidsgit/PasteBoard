@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var timer: Timer?
     let pasteboard: NSPasteboard = .general
     var lastChangeCount: Int = 0
-    let notifier = PasteBoardNotificationCenter.sharedInstance
+    let notifier = BoardNotificationCenter.sharedInstance
     
     
     // MARK: - FUNCTIONS
@@ -45,10 +45,6 @@ struct PasteBoardApp: App {
         WindowGroup {
             ContentView()
                 .frame(width: 1280, height: 720)
-                .background(
-                    Color.background
-                        .ignoresSafeArea()
-                )
                 .onReceive(NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification), perform: { _ in
                     for window in NSApplication.shared.windows {
                         
@@ -67,6 +63,7 @@ struct PasteBoardApp: App {
         .windowStyle(.hiddenTitleBar)
         .commands {
             CommandGroup(replacing: .newItem, addition: { })
+            CommandGroup(replacing: .sidebar, addition: { })
         }
     }
 }

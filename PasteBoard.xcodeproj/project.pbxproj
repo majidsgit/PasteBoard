@@ -11,7 +11,8 @@
 		8B1FDBF1284A05EA000D9BCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B1FDBF0284A05EA000D9BCD /* Assets.xcassets */; };
 		8B1FDBF4284A05EA000D9BCD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B1FDBF3284A05EA000D9BCD /* Preview Assets.xcassets */; };
 		8B1FDC01284A1142000D9BCD /* NSNotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1FDC00284A1142000D9BCD /* NSNotificationNameExtension.swift */; };
-		8B1FDC04284A1230000D9BCD /* PasteBoardNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1FDC03284A1230000D9BCD /* PasteBoardNotificationCenter.swift */; };
+		8B1FDC04284A1230000D9BCD /* BoardNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1FDC03284A1230000D9BCD /* BoardNotificationCenter.swift */; };
+		8B46AFD1284E31D100317389 /* BoardNotificationItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46AFD0284E31D100317389 /* BoardNotificationItemModel.swift */; };
 		8B936EB1284DE3D600B568EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B936EB0284DE3D600B568EA /* ContentView.swift */; };
 		8B936EB5284DE63000B568EA /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B936EB4284DE63000B568EA /* SidebarView.swift */; };
 		8B936EB7284DE81000B568EA /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B936EB6284DE81000B568EA /* FontExtension.swift */; };
@@ -32,7 +33,8 @@
 		8B1FDBF3284A05EA000D9BCD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8B1FDBFA284A05EA000D9BCD /* PasteBoard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PasteBoard.entitlements; sourceTree = "<group>"; };
 		8B1FDC00284A1142000D9BCD /* NSNotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationNameExtension.swift; sourceTree = "<group>"; };
-		8B1FDC03284A1230000D9BCD /* PasteBoardNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteBoardNotificationCenter.swift; sourceTree = "<group>"; };
+		8B1FDC03284A1230000D9BCD /* BoardNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardNotificationCenter.swift; sourceTree = "<group>"; };
+		8B46AFD0284E31D100317389 /* BoardNotificationItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardNotificationItemModel.swift; sourceTree = "<group>"; };
 		8B936EB0284DE3D600B568EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8B936EB4284DE63000B568EA /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		8B936EB6284DE81000B568EA /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
@@ -79,6 +81,8 @@
 			children = (
 				8BEE7D18284BBB81008162EA /* Info.plist */,
 				8B1FDBEC284A05EA000D9BCD /* PasteBoardApp.swift */,
+				8B46AFD2284E32C800317389 /* Models */,
+				8B46AFCF284E319B00317389 /* ViewModels */,
 				8B936EB3284DE52A00B568EA /* Views */,
 				8B936EB2284DE52200B568EA /* Extensions */,
 				8BEE7D17284BBB5C008162EA /* Fonts */,
@@ -98,14 +102,28 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		8B46AFCF284E319B00317389 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8B1FDC03284A1230000D9BCD /* BoardNotificationCenter.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8B46AFD2284E32C800317389 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B46AFD0284E31D100317389 /* BoardNotificationItemModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		8B936EAF284DE3C100B568EA /* from past */ = {
 			isa = PBXGroup;
 			children = (
 				8BBDE654284A89D1005F65A1 /* MasterItemView.swift */,
 				8BBDE662284AAE78005F65A1 /* QLImage.swift */,
 				8BBDE65F284AA32D005F65A1 /* NSImageView+GIF.swift */,
-				8B1FDC03284A1230000D9BCD /* PasteBoardNotificationCenter.swift */,
-				8B1FDC00284A1142000D9BCD /* NSNotificationNameExtension.swift */,
 			);
 			path = "from past";
 			sourceTree = "<group>";
@@ -113,6 +131,7 @@
 		8B936EB2284DE52200B568EA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8B1FDC00284A1142000D9BCD /* NSNotificationNameExtension.swift */,
 				8BC0A7F3284BC74F00D307C5 /* ColorExtension.swift */,
 				8B936EB6284DE81000B568EA /* FontExtension.swift */,
 			);
@@ -220,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B46AFD1284E31D100317389 /* BoardNotificationItemModel.swift in Sources */,
 				8B936EB9284DF77D00B568EA /* BoardView.swift in Sources */,
 				8BBDE655284A89D1005F65A1 /* MasterItemView.swift in Sources */,
 				8B1FDC01284A1142000D9BCD /* NSNotificationNameExtension.swift in Sources */,
@@ -228,7 +248,7 @@
 				8B936EB1284DE3D600B568EA /* ContentView.swift in Sources */,
 				8BBDE660284AA32D005F65A1 /* NSImageView+GIF.swift in Sources */,
 				8B936EB5284DE63000B568EA /* SidebarView.swift in Sources */,
-				8B1FDC04284A1230000D9BCD /* PasteBoardNotificationCenter.swift in Sources */,
+				8B1FDC04284A1230000D9BCD /* BoardNotificationCenter.swift in Sources */,
 				8B936EB7284DE81000B568EA /* FontExtension.swift in Sources */,
 				8B1FDBED284A05EA000D9BCD /* PasteBoardApp.swift in Sources */,
 			);

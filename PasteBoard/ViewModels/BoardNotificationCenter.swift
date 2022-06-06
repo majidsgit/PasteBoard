@@ -1,5 +1,5 @@
 //
-//  PasteBoardNotificationCenter.swift
+//  BoardNotificationCenter.swift
 //  PasteBoard
 //
 //  Created by developer on 6/3/22.
@@ -7,11 +7,11 @@
 
 import AppKit
 
-class PasteBoardNotificationCenter: ObservableObject {
+class BoardNotificationCenter: ObservableObject {
 
     // MARK: - PROPERTIES
-    static let sharedInstance = PasteBoardNotificationCenter()
-//    @Published var pasteboardItems = [PasteboardItemModel]()
+    static let sharedInstance = BoardNotificationCenter()
+    @Published var pasteboardItems = [BoardNotificationItemModel]()
     
     
     
@@ -25,8 +25,8 @@ class PasteBoardNotificationCenter: ObservableObject {
         guard let itemType = item.types.first else { return }
         guard let stringValue = item.string(forType: .string) else { return }
         
-//        let current = PasteboardItemModel(stringValue: stringValue, type: itemType, pasteboardItem: item, date: Date())
-//        
-//        pasteboardItems.append(current)
+        let current = BoardNotificationItemModel(title: stringValue, type: itemType, item: item, date: Date())
+        
+        pasteboardItems.append(current)
     }
 }
