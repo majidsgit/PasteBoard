@@ -64,9 +64,9 @@ struct SidebarView: View {
             itemView(title: "Board", image: "board") {
                 selectedView = "board"
             }
-            itemView(title: "Settings", image: "settings") {
-                selectedView = "settings"
-            }
+//            itemView(title: "Settings", image: "settings") {
+//                selectedView = "settings"
+//            }
         }
     }
     
